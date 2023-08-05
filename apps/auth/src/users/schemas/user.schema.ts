@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { AbstractDocument } from '@app/common';
+import { AbstractDocument } from '@starter-template/backend-libs';
 
 @Schema({ versionKey: false })
 export class User extends AbstractDocument {
