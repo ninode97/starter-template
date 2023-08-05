@@ -17,6 +17,24 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+  portfolio:
+    build:
+      context: .
+      dockerfile: ./apps/portfolio/Dockerfile
+      target: development
+    command: nx serve portfolio
+    ports:
+      - '3000:3000'
+    env_file:
+      - ./apps/portfolio/.env
+    depends_on:
+      - mongodb-primary
+      - mongodb-secondary
+      - mongodb-arbiter
+      - rabbitmq
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
   rabbitmq:
     image: rabbitmq
     ports:

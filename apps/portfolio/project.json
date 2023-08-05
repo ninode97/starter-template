@@ -14,7 +14,7 @@
         "outputPath": "dist/apps/portfolio",
         "main": "apps/portfolio/src/main.ts",
         "tsConfig": "apps/portfolio/tsconfig.app.json",
-        "assets": ["apps/portfolio/src/assets"],
+        "assets": [],
         "isolatedConfig": true,
         "webpackConfig": "apps/portfolio/webpack.config.js"
       },
