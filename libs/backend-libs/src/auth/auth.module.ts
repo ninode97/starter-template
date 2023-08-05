@@ -9,6 +9,6 @@ import { AUTH_SERVICE } from './services';
 })
 export class AuthModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(cookieParser()).forRoutes('*');
+    consumer.apply(cookieParser.default()).forRoutes('*');
   }
 }

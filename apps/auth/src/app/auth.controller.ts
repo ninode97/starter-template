@@ -1,4 +1,4 @@
-import { Controller, Post, Res, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
 import { MessagePattern } from '@nestjs/microservices';
 import { Response } from 'express';
 import { AuthService } from './auth.service';
@@ -25,5 +25,12 @@ export class AuthController {
   @MessagePattern('validate_user')
   async validateUser(@CurrentUser() user: User) {
     return user;
+  }
+
+  @Get('/')
+  async getSmth() {
+    return {
+      ok: 1,
+    };
   }
 }

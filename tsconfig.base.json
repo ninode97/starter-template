@@ -16,7 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@starter-template/backend-libs": ["libs/backend-libs/src/index.ts"]
-    }
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules", "tmp"]
 }
