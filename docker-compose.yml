@@ -35,6 +35,25 @@ services:
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+  client:
+    build:
+      context: .
+      dockerfile: ./apps/client/Dockerfile
+      target: development
+    command: nx serve client
+    ports:
+      - '4200:4200'
+    env_file:
+      - ./apps/client/.env
+    depends_on:
+      - mongodb-primary
+      - mongodb-secondary
+      - mongodb-arbiter
+      - rabbitmq
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
   rabbitmq:
     image: rabbitmq
     ports:
