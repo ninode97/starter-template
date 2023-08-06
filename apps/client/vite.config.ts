@@ -21,11 +21,6 @@ export default defineConfig({
   },
 
   plugins: [react(), nxViteTsPaths()],
-  css: {
-    postcss: {
-      plugins: [require('tailwindcss'), require('autoprefixer')],
-    },
-  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],

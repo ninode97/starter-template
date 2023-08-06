@@ -10,7 +10,7 @@ export function App() {
     <div>
       <div className="App">
         <header className="text-center bg-purple-500 text-white p-5">
-          <h1 className="text-4xl">Welcome to my aapp!</h1>
+          <h1 className="text-4xl">Welcome to myaaaaa aapp!</h1>
         </header>
       </div>
       <NxWelcome title="client" />
