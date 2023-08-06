@@ -13,3 +13,8 @@ sudo docker-compose up -d --force-recreate --build client
 ```
   sudo docker-compose up -d
 ```
+# NX 
+- Generating new application
+```
+nx generate @nrwl/nest:application <project-name>
+```
