@@ -36,4 +36,4 @@ COPY . .
 # Copy the 'client' app build from the development stage
 COPY --from=development /usr/src/app/dist/apps/client ./dist/apps/client
 
-CMD ["nx serve", "client"]
+CMD ["nx build", "client"]

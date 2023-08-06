@@ -1,5 +1,6 @@
 services:
   auth:
+    container_name: startr-auth
     build:
       context: .
       dockerfile: ./apps/auth/Dockerfile
@@ -18,6 +19,7 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
   portfolio:
+    container_name: startr-portfolio
     build:
       context: .
       dockerfile: ./apps/portfolio/Dockerfile
@@ -36,6 +38,7 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
   client:
+    container_name: startr-client
     build:
       context: .
       dockerfile: ./apps/client/Dockerfile
@@ -45,20 +48,16 @@ services:
       - '4200:4200'
     env_file:
       - ./apps/client/.env
-    depends_on:
-      - mongodb-primary
-      - mongodb-secondary
-      - mongodb-arbiter
-      - rabbitmq
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-
   rabbitmq:
+    container_name: startr-rabbitmq
     image: rabbitmq
     ports:
       - '5672:5672'
   mongodb-primary:
+    container_name: startr-mongodb
     image: docker.io/bitnami/mongodb:5.0
     environment:
       - MONGODB_ADVERTISED_HOSTNAME=mongodb-primary
@@ -71,6 +70,7 @@ services:
       - '27017:27017'
 
   mongodb-secondary:
+    container_name: startr-mongodb-secondary
     image: docker.io/bitnami/mongodb:5.0
     depends_on:
       - mongodb-primary
@@ -82,6 +82,7 @@ services:
       - MONGODB_REPLICA_SET_KEY=replicasetkey123
 
   mongodb-arbiter:
+    container_name: startr-mongodb-arbiter
     image: docker.io/bitnami/mongodb:5.0
     depends_on:
       - mongodb-primary
