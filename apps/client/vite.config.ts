@@ -9,6 +9,10 @@ export default defineConfig({
   server: {
     host: '0.0.0.0',
     port: 4200,
+    fs: {
+      // Allow serving files from one level up to the project root
+      allow: ['..'],
+    },
   },
 
   preview: {
@@ -17,7 +21,11 @@ export default defineConfig({
   },
 
   plugins: [react(), nxViteTsPaths()],
-
+  css: {
+    postcss: {
+      plugins: [require('tailwindcss'), require('autoprefixer')],
+    },
+  },
   // Uncomment this if you are using workers.
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
