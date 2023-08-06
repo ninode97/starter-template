@@ -42,7 +42,7 @@
     "@nx/linter": "16.6.0",
     "@nx/nest": "16.6.0",
     "@nx/node": "16.6.0",
-    "@nx/react": "16.6.0",
+    "@nx/react": "^16.6.0",
     "@nx/vite": "16.6.0",
     "@nx/webpack": "16.6.0",
     "@nx/workspace": "16.6.0",
